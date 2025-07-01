@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Avengers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.webp" type="image/webp" />
+  </head>
+  <body>
+    <main>
+      <div class="list">
+        <div class="item">
+          <img src="hawkeye.jpg" alt="Iron Man" />
+        </div>
+        <div class="item">
+          <img src="blackpanther.jpg" alt="Captain America" />
+        </div>
+        <div class="item">
+          <img src="strange.jpg" alt="Doctor Strange" />
+        </div>
+        <div class="item">
+          <img src="hulk.jpg" alt="Thor" />
+        </div>
+        <div class="item">
+          <img src="captian.jpg" alt="Hulk" />
+        </div>
+        <div class="item">
+          <img src="ironman.jpeg" alt="Black Widow" />
+        </div>
+        <div class="item">
+          <img src="spidey.jpeg" alt="Hawkeye" />
+        </div>
+        <div class="item">
+          <img src="thor.jpg" alt="Spider-Man" />
+        </div>
+        <div class="item">
+          <img src="antman.jpg" alt="Scarlet Witch" />
+        </div>
+        <div class="item">
+          <img src="blackwidow.jpg" alt="Vision" />
+        </div>
+      </div>
+    </main>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+          clearClasses();
+          item.classList.add("active");
+
+          for (let i = 1; i <= 3; i++) {
+            if (items[index - i]) items[index - i].classList.add(`side-${i}`);
+            if (items[index + i]) items[index + i].classList.add(`side-${i}`);
+          }
+        });
+
+        item.addEventListener("mouseleave", () => {
+          clearClasses();
+        });
+      });
+
+      function clearClasses() {
+        items.forEach((item) => {
+          item.classList.remove("active", "side-1", "side-2", "side-3");
+        });
+      }
+    </script>
+  </body>
+</html>

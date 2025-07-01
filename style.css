@@ -1,0 +1,120 @@
+/*body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(7, 6, 6);
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.list {
+  display: flex;
+  gap: 10px;
+
+  padding: 10px;
+  background-color: rgb(7, 6, 6);
+  border-radius: 12px;
+}
+
+.item {
+  background-color: rgb(7, 6, 6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item img {
+  width: 70px;
+  height: 100%;
+}
+
+.list .item {
+  transition: 0.5s;
+  filter: brightness(0);
+}
+.list .item:hover {
+  filter: brightness(1);
+  transform: translateZ(200px);
+}
+.list .item:hover + * {
+  filter: brightness(0.6);
+}
+.list .item:hover + * + * {
+  filter: brightness(0.2);
+}
+
+.list .item:hover + * + * {
+  filter: brightness(0.2);
+}
+.list .item:has(+ * :hover) {
+  filter: brightness(0.2);
+}
+*/
+/*----------------*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(7, 6, 6);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(7, 6, 6);
+  border-radius: 12px;
+  perspective: 1000px;
+}
+
+.item {
+  background-color: rgb(7, 6, 6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0);
+}
+
+.item img {
+  width: 70px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hovered item */
+.item.active {
+  transform: scale(1.5) translateZ(100px);
+  filter: brightness(1);
+  z-index: 10;
+}
+
+/* Side items */
+.item.side-1 {
+  transform: scale(1.2) translateZ(60px);
+  filter: brightness(0.4);
+  z-index: 9;
+}
+.item.side-2 {
+  transform: scale(1.1) translateZ(40px);
+  filter: brightness(0.2);
+  z-index: 8;
+}
